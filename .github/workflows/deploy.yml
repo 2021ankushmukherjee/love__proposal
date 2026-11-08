@@ -20,7 +20,7 @@ jobs:
       - run: npm install --global pnpm@10
       - uses: actions/configure-pages@v5
       - run: pnpm install --frozen-lockfile
-      - run: pnpm lint
+      - run: pnpm exec eslint src
       - run: pnpm exec tsc --noEmit
       - run: pnpm build
         env:
