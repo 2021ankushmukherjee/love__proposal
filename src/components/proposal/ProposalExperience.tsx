@@ -14,6 +14,9 @@ import {
 import { useEffect, useState } from "react";
 import { proposalContent as c } from "@/data/proposal-content";
 
+// GitHub Pages serves project sites from a repository sub-path.
+const publicAsset = (path: string) => `${process.env.NEXT_PUBLIC_BASE_PATH ?? ""}${path}`;
+
 const celebrationEmojis = [
   ["🌹", 4, 10, 28, 13],
   ["❤️", 10, 34, 31, 11],
@@ -144,7 +147,7 @@ function Moment({ next }: { next: () => void }) {
       <div className="memory-card">
         <div className="memory-image-wrap">
           <img
-            src="/love-letter-moment.png"
+            src={publicAsset("/love-letter-moment.png")}
             alt="A watercolor love letter surrounded by rose petals"
             className="memory-image"
           />
@@ -417,7 +420,7 @@ function Accepted() {
 
       <div className="acceptance-hug" role="img" aria-label="A cute panda giving a warm hug">
         <span className="acceptance-hug-image">
-          <img src="/panda-love.gif" alt="" />
+          <img src={publicAsset("/panda-love.gif")} alt="" />
         </span>
         <span>A tiny hug, just for you.</span>
       </div>
