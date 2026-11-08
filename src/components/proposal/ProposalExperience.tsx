@@ -106,6 +106,44 @@ function Welcome({ next }: { next: () => void }) {
   );
 }
 
+function Moment({ next }: { next: () => void }) {
+  return (
+    <section className="content moment-screen">
+      <p className="eyebrow">before I say anything else</p>
+
+      <div className="memory-card">
+        <div className="memory-image-wrap">
+          <img
+            src="/love-letter-moment.png"
+            alt="A watercolor love letter surrounded by rose petals"
+            className="memory-image"
+          />
+          <span className="image-glow" />
+          <span className="memory-heart">❤</span>
+        </div>
+
+        <div className="memory-copy">
+          <span className="memory-kicker">
+            <Sparkles size={14} /> a little moment
+          </span>
+          <h2>Some feelings arrive quietly.</h2>
+          <p className="lead">
+            Not all at once. Sometimes they grow in the spaces between a
+            smile, a conversation, and the little moments you never want to
+            end.
+          </p>
+        </div>
+      </div>
+
+      <div className="moment-actions">
+        <Button onClick={next}>
+          Read What&apos;s In My Heart <Heart size={17} fill="currentColor" />
+        </Button>
+      </div>
+    </section>
+  );
+}
+
 function Letter({ next }: { next: () => void }) {
   const [open, setOpen] = useState(false);
   const [revealed, setRevealed] = useState(false);
@@ -379,7 +417,7 @@ export function ProposalExperience() {
   const [ending, setEnding] = useState<"yes" | "no" | null>(null);
 
   const next = () => {
-    setStep((x) => Math.min(4, x + 1));
+    setStep((x) => Math.min(5, x + 1));
   };
 
   useEffect(() => {
@@ -398,6 +436,7 @@ export function ProposalExperience() {
 
   const screens = [
     <Welcome key="welcome" next={next} />,
+    <Moment key="moment" next={next} />,
     <Letter key="letter" next={next} />,
     <Things key="things" next={next} />,
     <Confession key="confession" next={next} />,
@@ -465,9 +504,9 @@ export function ProposalExperience() {
       {!ending && (
         <div
           className="progress"
-          aria-label={`Step ${step + 1} of 5`}
+          aria-label={`Step ${step + 1} of 6`}
         >
-          {[0, 1, 2, 3, 4].map((i) => (
+          {[0, 1, 2, 3, 4, 5].map((i) => (
             <i
               key={i}
               className={i === step ? "active" : ""}
