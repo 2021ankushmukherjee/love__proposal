@@ -1,0 +1,1 @@
+export type ProposalContent={recipient:string;welcome:string[];letter:string[];littleThings:string[];confession:string[];proposal:string[];acceptance:string[];promise:string[];decline:string;signature:string[]};
