@@ -415,6 +415,13 @@ function Accepted() {
         </p>
       ))}
 
+      <div className="acceptance-hug" role="img" aria-label="A cute panda giving a warm hug">
+        <span className="acceptance-hug-image">
+          <img src="/panda-love.gif" alt="" />
+        </span>
+        <span>A tiny hug, just for you.</span>
+      </div>
+
       <p className="signature">
         {c.signature[0]}
         <br />
