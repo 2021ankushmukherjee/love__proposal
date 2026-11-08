@@ -27,6 +27,36 @@ const celebrationEmojis = [
   ["💖", 3, 98, 26, 15],
 ] as const;
 
+const floatingPetals = [
+  ["✦", 8, 16, 0],
+  ["❤", 20, 80, 2],
+  ["✦", 78, 13, 5],
+  ["♥", 89, 68, 1],
+  ["✦", 65, 89, 4],
+  ["❤", 5, 59, 3],
+] as const;
+
+function FloatingPetals() {
+  return (
+    <div className="floating-petals" aria-hidden>
+      {floatingPetals.map(([mark, left, top, delay], i) => (
+        <span
+          key={`${mark}-${i}`}
+          style={
+            {
+              left: `${left}%`,
+              top: `${top}%`,
+              "--delay": `${delay}s`,
+            } as React.CSSProperties
+          }
+        >
+          {mark}
+        </span>
+      ))}
+    </div>
+  );
+}
+
 function CelebrationBurst() {
   return (
     <div className="celebration-burst" aria-hidden>
@@ -463,6 +493,7 @@ export function ProposalExperience() {
       }`}
     >
       <div className="grain" />
+      <FloatingPetals />
 
       {ending === "yes" && <CelebrationBurst />}
 
