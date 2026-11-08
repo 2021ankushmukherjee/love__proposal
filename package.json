@@ -2,6 +2,7 @@
   "name": "love__proposal",
   "version": "0.1.0",
   "private": true,
+  "packageManager": "pnpm@11.15.1",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,6 +10,8 @@
     "lint": "eslint"
   },
   "dependencies": {
+    "lucide-react": "^1.70.0",
+    "motion": "^14.10.1",
     "next": "16.4.5",
     "react": "19.3.0",
     "react-dom": "19.3.0"
