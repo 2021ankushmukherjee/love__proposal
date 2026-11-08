@@ -331,10 +331,6 @@ function Proposal({ yes }: { yes: () => void }) {
 function Accepted() {
   return (
     <section className="content glass-card celebration">
-      <p className="eyebrow">
-        a beautiful beginning
-      </p>
-
       <h2>
         You just made
         <br />
