@@ -1,5 +1,3 @@
-# For Pratitee ❤️
-
 A private, cinematic proposal microsite built as a static Next.js app. It follows a gentle six-part story—from the opening note to a respectful answer—without a backend, analytics, or tracking.
 
 ## Stack
